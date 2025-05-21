@@ -1,0 +1,10 @@
+﻿<Solution>
+    <Project
+        Path="CSharpFunctionalExtensions.AwesomeAssertions.Generator.Tests\CSharpFunctionalExtensions.AwesomeAssertions.Generator.Tests.csproj"
+        Type="Classic C#"/>
+    <Project
+        Path="CSharpFunctionalExtensions.AwesomeAssertions.Generator\CSharpFunctionalExtensions.AwesomeAssertions.Generator.csproj"
+        Type="Classic C#"/>
+    <Project Path="CSharpFunctionalExtensions.AwesomeAssertions\CSharpFunctionalExtensions.AwesomeAssertions.csproj"
+             Type="Classic C#"/>
+</Solution>

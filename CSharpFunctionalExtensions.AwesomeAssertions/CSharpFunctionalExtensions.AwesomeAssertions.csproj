@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+
+        <IsPackable>true</IsPackable>
+        <PackageId>CSharpFunctionalExtensions.AwesomeAssertions</PackageId>
+        <Version>0.8.0</Version>
+        <Authors>Kuurama</Authors>
+        <Description>AwesomeAssertion extensions for CSharpFunctionalExtensions monad types with source generator support</Description>
+        <PackageTags>Assertions;CSharpFunctionalExtensions;Monad;Testing;AwesomeAssertions</PackageTags>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</RepositoryUrl>
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Include="..\README.md" Pack="true" PackagePath=""/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CSharpFunctionalExtensions.AwesomeAssertions.Generator\CSharpFunctionalExtensions.AwesomeAssertions.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AwesomeAssertions" Version="8.2.0"/>
+        <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0"/>
+    </ItemGroup>
+
+</Project>
