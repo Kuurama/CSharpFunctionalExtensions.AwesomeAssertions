@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using System.Diagnostics.CodeAnalysis;
+using CSharpFunctionalExtensions;
 using CSharpFunctionalExtensions.AwesomeAssertions.Generator;
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -16,6 +17,7 @@ public static class UnitResultExtensions
 public class UnitResultAssertions<E>(UnitResult<E> instance, AssertionChain chain)
     : ReferenceTypeAssertions<UnitResult<E>, UnitResultAssertions<E>>(instance, chain)
 {
+    [ExcludeFromCodeCoverage]
     protected override string Identifier => "Result";
 
     /// <summary>
@@ -63,8 +65,9 @@ public class UnitResultAssertions<E>(UnitResult<E> instance, AssertionChain chai
     /// <param name="becauseArgs"></param>
     /// <returns></returns>
     [CustomAssertion]
-    public AndWhichConstraint<UnitResultAssertions<E>, E> FailWith(E error, string because = "",
-                                                                   params object[] becauseArgs)
+    public AndWhichConstraint<UnitResultAssertions<E>, E> FailWith(
+        E error, string because = "",
+        params object[] becauseArgs)
     {
         CurrentAssertionChain.BecauseOf(because, becauseArgs)
             .ForCondition(Subject.IsFailure)

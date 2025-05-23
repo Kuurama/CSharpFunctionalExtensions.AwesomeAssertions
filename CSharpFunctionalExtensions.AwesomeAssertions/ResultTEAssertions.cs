@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using System.Diagnostics.CodeAnalysis;
+using CSharpFunctionalExtensions;
 using CSharpFunctionalExtensions.AwesomeAssertions.Generator;
 using FluentAssertions.Execution;
 using FluentAssertions.Primitives;
@@ -17,6 +18,7 @@ public static class ResultTEExtensions
 public class ResultAssertions<T, E>(Result<T, E> instance, AssertionChain chain)
     : ReferenceTypeAssertions<Result<T, E>, ResultAssertions<T, E>>(instance, chain)
 {
+    [ExcludeFromCodeCoverage]
     protected override string Identifier => "Result<T, E>";
 
     /// <summary>

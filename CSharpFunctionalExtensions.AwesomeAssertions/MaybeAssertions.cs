@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
 using CSharpFunctionalExtensions.AwesomeAssertions.Generator;
 using FluentAssertions.Execution;
@@ -19,6 +20,7 @@ public static class MaybeExtensions
 public class MaybeAssertions<T>(Maybe<T> instance, AssertionChain chain)
     : ReferenceTypeAssertions<Maybe<T>, MaybeAssertions<T>>(instance, chain)
 {
+    [ExcludeFromCodeCoverage]
     protected override string Identifier => "Maybe<T>";
 
     /// <summary>
