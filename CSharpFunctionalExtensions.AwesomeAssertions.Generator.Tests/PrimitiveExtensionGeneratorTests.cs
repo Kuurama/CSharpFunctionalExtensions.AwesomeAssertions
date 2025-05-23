@@ -65,8 +65,11 @@ namespace TestNamespace
         // Check for string extension
         Assert.Contains("public static StringAssertions TestShould", extensionContent);
 
-        // Check for numeric extension
-        Assert.Contains("public static NumericAssertions<T> TestShould<T>", extensionContent);
+        // Check for some generic assertions
+        Assert.Contains("public static NumericAssertions<int> TestShould", extensionContent);
+
+        // Check for some generic type with generic assertion
+        Assert.Contains("public static GenericCollectionAssertions<U> TestShould<U>", extensionContent);
 
         // Check for enum extension
         Assert.Contains("public static EnumAssertions<TEnum> TestShould<TEnum, TIgnored>", extensionContent);
@@ -131,5 +134,17 @@ namespace TestNamespace
         // Verify right side extensions use the second generic parameter
         Assert.Contains("public static StringAssertions RightShould<TLeft>", extensionContent);
         Assert.Contains("instance.Right", extensionContent);
+
+        // Check for some generic assertion
+        Assert.Contains("public static NumericAssertions<int> LeftShould", extensionContent);
+        Assert.Contains("public static NumericAssertions<int> RightShould", extensionContent);
+
+        // Check for some generic type with generic assertion
+        Assert.Contains(
+            "public static GenericCollectionAssertions<U> LeftShould<TRight, U>(this TestNamespace.Pairs<U[], TRight>",
+            extensionContent);
+        Assert.Contains(
+            "public static GenericCollectionAssertions<U> RightShould<TLeft, U>(this TestNamespace.Pairs<TLeft, U[]>",
+            extensionContent);
     }
 }

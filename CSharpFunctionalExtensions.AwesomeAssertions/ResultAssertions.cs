@@ -10,8 +10,8 @@ public static class ResultExtensions
     public static ResultAssertions Should(this Result instance)
         => new(instance, AssertionChain.GetOrCreate());
 
-    public static StringAssertions FailureShould(this ResultAssertions instance)
-        => new(instance.Subject.Error, AssertionChain.GetOrCreate());
+    public static StringAssertions FailureShould(this Result instance)
+        => new(instance.Error, AssertionChain.GetOrCreate());
 }
 
 public class ResultAssertions(Result instance, AssertionChain chain)
