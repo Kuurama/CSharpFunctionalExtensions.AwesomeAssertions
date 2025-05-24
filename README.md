@@ -1,15 +1,15 @@
 # CSharpFunctionalExtensions.AwesomeAssertions
 
-**CSharpFunctionalExtensions.AwesomeAssertions** is a FluentAssertions extension library
+An **AwesomeAssertions** extension library 
 for [CSharpFunctionalExtensions](https://github.com/vkhorikov/CSharpFunctionalExtensions), providing expressive,
-type-safe, and discoverable assertions for `Result`, `Result<T>`, `Result<T, E>`, `Maybe<T>`, and `UnitResult<E>` types.
+type-safe, and discoverable assertions for `Result`, `Result<T>`, `Result<T, E>`, `Maybe<T>`, and `UnitResult<E>` types. Latest version available here: [![NuGet](https://img.shields.io/nuget/v/CSharpFunctionalExtensions.AwesomeAssertions.svg)](https://www.nuget.org/packages/CSharpFunctionalExtensions.AwesomeAssertions/)
 
 ## Features
 
 - **Strongly-typed assertions** for all CSharpFunctionalExtensions result types.
 - **Source-generated extension methods** for primitive, collection, and enum types, making assertions more discoverable
   and concise.
-- **Seamless integration** with FluentAssertions.
+- **Seamless integration** with AwesomeAssertions.
 
 ---
 
@@ -28,7 +28,7 @@ dotnet add package CSharpFunctionalExtensions.AwesomeAssertions
 ### 1. Generated Extension Methods (Recommended)
 
 The real power of this library comes from the **source-generated extension methods**. These methods are context-aware
-and provide direct access to the underlying value or error, returning the most appropriate FluentAssertions assertion
+and provide direct access to the underlying value or error, returning the most appropriate AwesomeAssertions/FluentAssertions assertion
 type for the value. This makes your assertions more concise, type-safe, and discoverable.
 
 #### Example: Asserting on the Value of a Result
