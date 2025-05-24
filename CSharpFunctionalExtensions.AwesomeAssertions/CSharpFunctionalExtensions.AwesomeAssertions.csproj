@@ -21,7 +21,7 @@
         <RepositoryUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageProjectUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</PackageProjectUrl>
-        <PackageIconUrl>https://raw.githubusercontent.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions/main/icon.png</PackageIconUrl>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
             Version 1.0.0:
@@ -37,6 +37,7 @@
 
     <ItemGroup>
         <None Include="..\README.md" Pack="true" PackagePath=""/>
+        <None Include="..\icon.png" Pack="true" PackagePath=""/>
     </ItemGroup>
 
     <ItemGroup>
