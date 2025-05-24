@@ -7,14 +7,28 @@
 
         <IsPackable>true</IsPackable>
         <PackageId>CSharpFunctionalExtensions.AwesomeAssertions</PackageId>
-        <Version>0.8.0</Version>
+        <Version>1.0.0</Version>
         <Authors>Kuurama</Authors>
+        <Company>Kuurama</Company>
+        <Product>CSharpFunctionalExtensions.AwesomeAssertions</Product>
         <Description>AwesomeAssertion extensions for CSharpFunctionalExtensions monad types with source generator support</Description>
-        <PackageTags>Assertions;CSharpFunctionalExtensions;Monad;Testing;AwesomeAssertions</PackageTags>
+        <PackageTags>Assertions;CSharpFunctionalExtensions;Monad;Testing;AwesomeAssertions;FluentAssertions;UnitTest;BDD;TDD</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageProjectUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</PackageProjectUrl>
+        <PackageIconUrl>https://raw.githubusercontent.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions/main/icon.png</PackageIconUrl>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageReleaseNotes>
+            Version 1.0.0:
+            - First major release (V1)
+            - Fluent Assertions for Maybe{T}, Result, Result{T}, Result{T,E}, UnitResult{E}
+            - Code generator support to generate assertions for custom types
+            - .NET 9.0 Compatible
+            - MIT License
+        </PackageReleaseNotes>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Copyright>Copyright © 2024 Kuurama</Copyright>
     </PropertyGroup>
 
     <ItemGroup>
