@@ -67,6 +67,7 @@ public class MaybeTGenExtTests
         var maybeReadOnlyCollection = Maybe<ReadOnlyCollection<int>>.From(new ReadOnlyCollection<int>([1, 2, 3]));
         var maybeEnum = Maybe<ExtendedType.TestEnum>.From(ExtendedType.TestEnum.First);
         var maybeNullableEnum = Maybe<ExtendedType.TestEnum?>.From(ExtendedType.TestEnum.First);
+        var maybeUnknownType = Maybe<ExtendedType.TestType>.From(new ExtendedType.TestType());
 
         // Act
         var iEnumerableAssertion = maybeIEnumerable.ValueShould();
@@ -80,6 +81,7 @@ public class MaybeTGenExtTests
         var readOnlyCollectionAssertion = maybeReadOnlyCollection.ValueShould();
         var enumAssertion = maybeEnum.ValueShould<ExtendedType.TestEnum, int>();
         var nullableEnumAssertion = maybeNullableEnum.ValueShould<ExtendedType.TestEnum, int>();
+        var unknownTypeAssertion = maybeUnknownType.ValueShould();
 
         // Assert
         Assert.Equal(
@@ -125,6 +127,10 @@ public class MaybeTGenExtTests
         Assert.Equal(
             typeof(NullableEnumAssertions<ExtendedType.TestEnum>),
             nullableEnumAssertion.GetType()
+        );
+        Assert.Equal(
+            typeof(ObjectAssertions),
+            unknownTypeAssertion.GetType()
         );
     }
 }

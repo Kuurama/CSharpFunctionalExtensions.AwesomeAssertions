@@ -95,7 +95,7 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
     ];
 
     // list of primitive with generic assertion types
-    private static readonly HashSet<(string TypeName, string AssertionType, string AssertionGenericTypeName, string?
+    private static readonly HashSet<(string TypeName, string AssertionType, string? AssertionGenericTypeName, string?
             genericCounpound)>
         _genericPrimitiveTypes =
         [
@@ -131,7 +131,8 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
             ("ReadOnlyCollection<U>", "GenericCollection", "U", "U"),
             ("List<U>", "GenericCollection", "U", "U"),
             ("U[]", "GenericCollection", "U", "U"),
-            ("ArraySegment<U>", "GenericCollection", "U", "U")
+            ("ArraySegment<U>", "GenericCollection", "U", "U"),
+            ("U", "Object", null, "U")
         ];
 
     public void Initialize(IncrementalGeneratorInitializationContext context)
@@ -452,7 +453,7 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
         string typeParamsDecl, string methodName, string fieldAccessor,
         int genericPosition)
     {
-        foreach (var (typeName, assertionType, assertionGenericTypeName, genericCounpound) in _genericPrimitiveTypes)
+        foreach (var (typeName, assertionType, assertionGenericTypeName, genericCompound) in _genericPrimitiveTypes)
             sb.Append(typeParameters.Count switch
             {
                 1 => $$"""
@@ -460,7 +461,7 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
                                /// <summary>
                                /// Assertion extension for {{typeName}} values.
                                /// </summary>
-                               public static {{assertionType}}Assertions<{{assertionGenericTypeName}}> {{methodName}}{{(genericCounpound is null ? "" : $"<{genericCounpound}>")}}(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeName}>")}} instance)
+                               public static {{assertionType}}Assertions{{(assertionGenericTypeName == null ? "" : $"<{assertionGenericTypeName}>")}} {{methodName}}{{(genericCompound is null ? "" : $"<{genericCompound}>")}}(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeName}>")}} instance)
                                    => new(instance.{{fieldAccessor}}, AssertionChain.GetOrCreate());
                                    
                        """,
@@ -472,7 +473,7 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
                                   /// <summary>
                                   /// Assertion extension for {{typeName}} values.
                                   /// </summary>
-                                  public static {{assertionType}}Assertions<{{assertionGenericTypeName}}> {{methodName}}<{{typeParam2}}{{(genericCounpound is null ? "" : $", {genericCounpound}")}}>(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeName}, {typeParam2}>")}} instance)
+                                  public static {{assertionType}}Assertions{{(assertionGenericTypeName == null ? "" : $"<{assertionGenericTypeName}>")}} {{methodName}}<{{typeParam2}}{{(genericCompound is null ? "" : $", {genericCompound}")}}>(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeName}, {typeParam2}>")}} instance)
                                       => new(instance.{{fieldAccessor}}, AssertionChain.GetOrCreate());
                                       
                           """,
@@ -482,7 +483,7 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
                                   /// <summary>
                                   /// Assertion extension for {{typeName}} values.
                                   /// </summary>
-                                  public static {{assertionType}}Assertions<{{assertionGenericTypeName}}> {{methodName}}<{{typeParam1}}{{(genericCounpound is null ? "" : $", {genericCounpound}")}}>(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeParam1}, {typeName}>")}} instance)
+                                  public static {{assertionType}}Assertions{{(assertionGenericTypeName == null ? "" : $"<{assertionGenericTypeName}>")}} {{methodName}}<{{typeParam1}}{{(genericCompound is null ? "" : $", {genericCompound}")}}>(this {{fullTypeName.Replace(className + typeParamsDecl, className + $"<{typeParam1}, {typeName}>")}} instance)
                                       => new(instance.{{fieldAccessor}}, AssertionChain.GetOrCreate());
                                       
                           """,

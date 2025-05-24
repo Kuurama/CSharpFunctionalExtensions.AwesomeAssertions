@@ -135,7 +135,7 @@ failed.Should().Fail().Which.Should().Be("fail!");
 - **Discoverability:** Just type `.` after your result/maybe and see the available assertion methods in IntelliSense.
 - **Type Safety:** The extension returns the most specific assertion type (e.g., `NumericAssertions<int>`,
   `GenericCollectionAssertions<T>`, `EnumAssertions<TEnum>`, etc.).
-- **Less Boilerplate:** No need to chain `.Should().Succeed().Which`—just call the generated method and assert directly.
+- **Less Boilerplate:** No need to chain `.Should().Succeed().Which` just call the generated method and assert directly.
 
 ---
 

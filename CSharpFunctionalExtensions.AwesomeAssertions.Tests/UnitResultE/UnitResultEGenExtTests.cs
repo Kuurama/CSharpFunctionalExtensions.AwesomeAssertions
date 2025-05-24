@@ -65,6 +65,7 @@ public class UnitResultEGenExtTests
         var resultReadOnlyCollection = UnitResult.Failure(new ReadOnlyCollection<int>([1, 2, 3]));
         var resultEnum = UnitResult.Failure(ExtendedType.TestEnum.First);
         var resultNullableEnum = UnitResult.Failure<ExtendedType.TestEnum?>(ExtendedType.TestEnum.First);
+        var resultUnknownType = UnitResult.Failure(new ExtendedType.TestType());
 
         // Act
         var iEnumerableAssertion = resultIEnumerable.FailureShould();
@@ -78,6 +79,7 @@ public class UnitResultEGenExtTests
         var readOnlyCollectionAssertion = resultReadOnlyCollection.FailureShould();
         var enumAssertion = resultEnum.FailureShould<ExtendedType.TestEnum, int>();
         var nullableEnumAssertion = resultNullableEnum.FailureShould<ExtendedType.TestEnum, int>();
+        var unknownTypeAssertion = resultUnknownType.FailureShould();
 
         // Assert
         Assert.Equal(
@@ -123,6 +125,10 @@ public class UnitResultEGenExtTests
         Assert.Equal(
             typeof(NullableEnumAssertions<ExtendedType.TestEnum>),
             nullableEnumAssertion.GetType()
+        );
+        Assert.Equal(
+            typeof(ObjectAssertions),
+            unknownTypeAssertion.GetType()
         );
     }
 }

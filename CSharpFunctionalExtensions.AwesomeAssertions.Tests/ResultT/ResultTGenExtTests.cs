@@ -65,6 +65,7 @@ public class ResultTGenExtTests
         var resultReadOnlyCollection = Result.Success(new ReadOnlyCollection<int>([1, 2, 3]));
         var resultEnum = Result.Success(ExtendedType.TestEnum.First);
         var resultNullableEnum = Result.Success<ExtendedType.TestEnum?>(ExtendedType.TestEnum.First);
+        var resultUnknownType = Result.Success(new ExtendedType.TestType());
 
         // Act
         var iEnumerableAssertion = resultIEnumerable.SuccessShould();
@@ -78,6 +79,7 @@ public class ResultTGenExtTests
         var readOnlyCollectionAssertion = resultReadOnlyCollection.SuccessShould();
         var enumAssertion = resultEnum.SuccessShould<ExtendedType.TestEnum, int>();
         var nullableEnumAssertion = resultNullableEnum.SuccessShould<ExtendedType.TestEnum, int>();
+        var unknownTypeAssertion = resultUnknownType.SuccessShould();
 
         // Assert
         Assert.Equal(
@@ -123,6 +125,10 @@ public class ResultTGenExtTests
         Assert.Equal(
             typeof(NullableEnumAssertions<ExtendedType.TestEnum>),
             nullableEnumAssertion.GetType()
+        );
+        Assert.Equal(
+            typeof(ObjectAssertions),
+            unknownTypeAssertion.GetType()
         );
     }
 }

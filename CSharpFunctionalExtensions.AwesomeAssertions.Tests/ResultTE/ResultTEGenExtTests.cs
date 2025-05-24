@@ -114,6 +114,7 @@ public class ResultTEGenExtTests
         );
         var resultEnum = Result.Success<ExtendedType.TestEnum, string>(ExtendedType.TestEnum.First);
         var resultNullableEnum = Result.Success<ExtendedType.TestEnum?, string>(ExtendedType.TestEnum.First);
+        var resultUnknownType = Result.Success<ExtendedType.TestType, string>(new ExtendedType.TestType());
 
         // Act
         var iEnumerableAssertion = resultIEnumerable.SuccessShould();
@@ -127,6 +128,7 @@ public class ResultTEGenExtTests
         var readOnlyCollectionAssertion = resultReadOnlyCollection.SuccessShould();
         var enumAssertion = resultEnum.SuccessShould<ExtendedType.TestEnum, string, int>();
         var nullableEnumAssertion = resultNullableEnum.SuccessShould<ExtendedType.TestEnum, string, int>();
+        var unknownTypeAssertion = resultUnknownType.SuccessShould();
 
         // Assert
         Assert.Equal(
@@ -172,6 +174,10 @@ public class ResultTEGenExtTests
         Assert.Equal(
             typeof(NullableEnumAssertions<ExtendedType.TestEnum>),
             nullableEnumAssertion.GetType()
+        );
+        Assert.Equal(
+            typeof(ObjectAssertions),
+            unknownTypeAssertion.GetType()
         );
     }
 
@@ -192,6 +198,7 @@ public class ResultTEGenExtTests
         );
         var resultEnum = Result.Failure<string, ExtendedType.TestEnum>(ExtendedType.TestEnum.First);
         var resultNullableEnum = Result.Failure<string, ExtendedType.TestEnum?>(ExtendedType.TestEnum.First);
+        var resultUnknownType = Result.Failure<string, ExtendedType.TestType>(new ExtendedType.TestType());
 
 
         // Act
@@ -206,6 +213,7 @@ public class ResultTEGenExtTests
         var readOnlyCollectionAssertion = resultReadOnlyCollection.FailureShould();
         var enumAssertion = resultEnum.FailureShould<string, ExtendedType.TestEnum, int>();
         var nullableEnumAssertion = resultNullableEnum.FailureShould<string, ExtendedType.TestEnum, int>();
+        var unknownTypeAssertion = resultUnknownType.FailureShould();
 
         // Assert
         Assert.Equal(
@@ -251,6 +259,10 @@ public class ResultTEGenExtTests
         Assert.Equal(
             typeof(NullableEnumAssertions<ExtendedType.TestEnum>),
             nullableEnumAssertion.GetType()
+        );
+        Assert.Equal(
+            typeof(ObjectAssertions),
+            unknownTypeAssertion.GetType()
         );
     }
 }

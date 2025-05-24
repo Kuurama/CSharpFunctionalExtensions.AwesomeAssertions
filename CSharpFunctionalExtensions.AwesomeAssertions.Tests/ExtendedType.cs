@@ -78,4 +78,6 @@ public static class ExtendedType
         Second,
         Third
     }
+
+    public readonly record struct TestType;
 }
