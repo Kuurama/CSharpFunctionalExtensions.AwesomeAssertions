@@ -23,13 +23,13 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Diagnostics;
 
-[DebuggerNonUserCode]
-[ExcludeFromCodeCoverage]
 namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
 {
     /// <summary>
     /// Marks a class for the generation of primitive assertion extensions.
     /// </summary>
+    [DebuggerNonUserCode]
+    [ExcludeFromCodeCoverage]
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true, Inherited = false)]
     public class GeneratePrimitiveExtensionsAttribute : Attribute
     {

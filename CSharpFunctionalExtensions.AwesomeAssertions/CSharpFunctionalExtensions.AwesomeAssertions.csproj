@@ -11,7 +11,11 @@
         <Authors>Kuurama</Authors>
         <Company>Kuurama</Company>
         <Product>CSharpFunctionalExtensions.AwesomeAssertions</Product>
-        <Description>AwesomeAssertion extensions for CSharpFunctionalExtensions monad types with source generator support</Description>
+        <Description>
+            AwesomeAssertions for CSharpFunctionalExtensions: Write expressive, type-safe, and discoverable assertions for Maybe{T}, Result, Result{T}, Result{T,E}, and UnitResult{E} in your tests.
+            Includes source-generated extension methods for direct value/error assertions, seamless FluentAssertions integration, and full support for primitive, collections and enums.
+            See the README for full documentation and usage examples.
+        </Description>
         <PackageTags>Assertions;CSharpFunctionalExtensions;Monad;Testing;AwesomeAssertions;FluentAssertions;UnitTest;BDD;TDD</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <RepositoryUrl>https://github.com/Kuurama/CSharpFunctionalExtensions.AwesomeAssertions</RepositoryUrl>
@@ -45,3 +49,4 @@
     </ItemGroup>
 
 </Project>
+
