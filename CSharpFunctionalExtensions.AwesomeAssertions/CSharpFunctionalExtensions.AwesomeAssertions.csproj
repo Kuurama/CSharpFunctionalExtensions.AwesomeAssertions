@@ -24,8 +24,7 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
-            Version 1.0.0:
-            - First major release (V1)
+            Version 1.0.1:
             - Fluent Assertions for Maybe{T}, Result, Result{T}, Result{T,E}, UnitResult{E}
             - Code generator support to generate assertions for custom types
             - .NET 9.0 Compatible
