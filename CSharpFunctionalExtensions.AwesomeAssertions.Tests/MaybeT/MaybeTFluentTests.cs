@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
 using Xunit.Sdk;
 
-namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.Maybe;
+namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.MaybeT;
 
-public class MaybeFluentTests
+public class MaybeTFluentTests
 {
     [Fact]
     public void Should_ShouldReturnMaybeAssertions_WhenSuccess()
@@ -50,10 +50,10 @@ public class MaybeFluentTests
     {
         // Arrange
         var maybe = Maybe<int>.From(42);
-        
+
         // Act
         var result = maybe.Should().HaveSomeValue();
-        
+
         // Assert
         result.Which.Should().Be(42);
     }
@@ -113,8 +113,8 @@ public class MaybeFluentTests
     public void HaveNoValue_ShouldPass_WhenMaybeHasNoValue()
     {
         var Maybe = Maybe<ICollection<int>>.From([]);
-        
-        
+
+
         // Arrange
         var maybe = Maybe<int>.None;
 

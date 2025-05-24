@@ -4,9 +4,9 @@ using FluentAssertions.Collections;
 using FluentAssertions.Primitives;
 using static CSharpFunctionalExtensions.AwesomeAssertions.Tests.GenericHelper;
 
-namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.Maybe;
+namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.MaybeT;
 
-public class MaybeGenExtTests
+public class MaybeTGenExtTests
 {
     public static IEnumerable<object?[]> Primitive => ExtendedType.Primitive;
     public static IEnumerable<object?[]> GenericAssertions => ExtendedType.GenericAssertions;
