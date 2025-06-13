@@ -1,11 +1,11 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
 using CSharpFunctionalExtensions.AwesomeAssertions.Generator;
-using FluentAssertions.Execution;
-using FluentAssertions.Primitives;
+using AwesomeAssertions.Execution;
+using AwesomeAssertions.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace FluentAssertions;
+namespace AwesomeAssertions;
 
 [GeneratePrimitiveExtensions("FailureShould", "Error", "CSharpFunctionalExtensions.UnitResult`1")]
 public static class UnitResultExtensions

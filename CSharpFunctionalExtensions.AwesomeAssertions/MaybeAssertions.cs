@@ -2,11 +2,11 @@
 using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
 using CSharpFunctionalExtensions.AwesomeAssertions.Generator;
-using FluentAssertions.Execution;
-using FluentAssertions.Primitives;
+using AwesomeAssertions.Execution;
+using AwesomeAssertions.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace FluentAssertions;
+namespace AwesomeAssertions;
 
 [DebuggerNonUserCode]
 [GeneratePrimitiveExtensions("ValueShould", "Value", "CSharpFunctionalExtensions.Maybe`1")]

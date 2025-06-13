@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using CSharpFunctionalExtensions;
-using FluentAssertions.Execution;
-using FluentAssertions.Primitives;
+using AwesomeAssertions.Execution;
+using AwesomeAssertions.Primitives;
 
 // ReSharper disable once CheckNamespace
-namespace FluentAssertions;
+namespace AwesomeAssertions;
 
 public static class ResultExtensions
 {

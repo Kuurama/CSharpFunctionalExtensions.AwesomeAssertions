@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using FluentAssertions;
+using AwesomeAssertions;
 
 namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests;
 

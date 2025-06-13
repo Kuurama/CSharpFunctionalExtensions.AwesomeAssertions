@@ -1,5 +1,5 @@
-﻿using FluentAssertions;
-using FluentAssertions.Primitives;
+﻿using AwesomeAssertions;
+using AwesomeAssertions.Primitives;
 using Xunit.Sdk;
 
 namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.ResultT;

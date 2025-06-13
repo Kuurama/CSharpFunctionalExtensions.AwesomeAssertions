@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
-using FluentAssertions.Numeric;
-using FluentAssertions.Primitives;
-using FluentAssertions.Types;
+using AwesomeAssertions.Numeric;
+using AwesomeAssertions.Primitives;
+using AwesomeAssertions.Types;
 
 namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests;
 

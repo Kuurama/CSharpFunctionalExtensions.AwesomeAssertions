@@ -7,13 +7,13 @@
 
         <IsPackable>true</IsPackable>
         <PackageId>CSharpFunctionalExtensions.AwesomeAssertions</PackageId>
-        <Version>1.0.1</Version>
+        <Version>1.1.0</Version>
         <Authors>Kuurama</Authors>
         <Company>Kuurama</Company>
         <Product>CSharpFunctionalExtensions.AwesomeAssertions</Product>
         <Description>
             AwesomeAssertions for CSharpFunctionalExtensions: Write expressive, type-safe, and discoverable assertions for Maybe{T}, Result, Result{T}, Result{T,E}, and UnitResult{E} in your tests.
-            Includes source-generated extension methods for direct value/error assertions, seamless FluentAssertions integration, and full support for primitive, collections and enums.
+            Includes source-generated extension methods for direct value/error assertions, seamless AwesomeAssertions integration, and full support for primitive, collections and enums.
             See the README for full documentation and usage examples.
         </Description>
         <PackageTags>Assertions;CSharpFunctionalExtensions;Monad;Testing;AwesomeAssertions;FluentAssertions;UnitTest;BDD;TDD</PackageTags>
@@ -24,8 +24,10 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
+            Version 1.1.0:
+            - Support of AwesomeAssertions 9.0.0
             Version 1.0.1:
-            - Fluent Assertions for Maybe{T}, Result, Result{T}, Result{T,E}, UnitResult{E}
+            - AwesomeAssertions for Maybe{T}, Result, Result{T}, Result{T,E}, UnitResult{E}
             - Code generator support to generate assertions for custom types
             - .NET 9.0 Compatible
             - MIT License
@@ -44,7 +46,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AwesomeAssertions" Version="8.2.0"/>
+        <PackageReference Include="AwesomeAssertions" Version="9.0.0" />
         <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0"/>
     </ItemGroup>
 

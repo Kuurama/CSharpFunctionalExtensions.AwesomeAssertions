@@ -1,7 +1,7 @@
 ﻿using System.Collections.ObjectModel;
-using FluentAssertions;
-using FluentAssertions.Collections;
-using FluentAssertions.Primitives;
+using AwesomeAssertions;
+using AwesomeAssertions.Collections;
+using AwesomeAssertions.Primitives;
 using static CSharpFunctionalExtensions.AwesomeAssertions.Tests.GenericHelper;
 
 namespace CSharpFunctionalExtensions.AwesomeAssertions.Tests.MaybeT;

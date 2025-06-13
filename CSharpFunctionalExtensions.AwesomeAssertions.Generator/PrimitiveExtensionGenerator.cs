@@ -217,19 +217,19 @@ namespace CSharpFunctionalExtensions.AwesomeAssertions.Generator
                          using System.Reflection;
                          using System.Threading.Tasks;
                          using System.Xml.Linq;
-                         using FluentAssertions.Collections;
-                         using FluentAssertions.Common;
-                         using FluentAssertions.Execution;
-                         using FluentAssertions.Numeric;
-                         using FluentAssertions.Primitives;
-                         using FluentAssertions.Specialized;
-                         using FluentAssertions.Streams;
-                         using FluentAssertions.Types;
-                         using FluentAssertions.Xml;
+                         using AwesomeAssertions.Collections;
+                         using AwesomeAssertions.Common;
+                         using AwesomeAssertions.Execution;
+                         using AwesomeAssertions.Numeric;
+                         using AwesomeAssertions.Primitives;
+                         using AwesomeAssertions.Specialized;
+                         using AwesomeAssertions.Streams;
+                         using AwesomeAssertions.Types;
+                         using AwesomeAssertions.Xml;
                          using NotNullAttribute = System.Diagnostics.CodeAnalysis.NotNullAttribute;
 
                          // ReSharper disable once CheckNamespace
-                         namespace FluentAssertions
+                         namespace AwesomeAssertions
                          {
                              [DebuggerNonUserCode]
                              public static partial class GeneratedExtensions
