@@ -10,11 +10,11 @@ namespace AwesomeAssertions;
 [GeneratePrimitiveExtensions("SuccessShould", "Value", "CSharpFunctionalExtensions.Result`1")]
 public static class ResultTExtensions
 {
-    public static ResultAssertions<T> Should<T>(this Result<T> instance)
-        => new(instance, AssertionChain.GetOrCreate());
-
-    public static StringAssertions FailureShould<T>(this Result<T> instance)
-        => new(instance.Error, AssertionChain.GetOrCreate());
+    extension<T>(Result<T> instance)
+    {
+        public ResultAssertions<T> Should() => new(instance, AssertionChain.GetOrCreate());
+        public StringAssertions FailureShould() => new(instance.Error, AssertionChain.GetOrCreate());
+    }
 }
 
 public class ResultAssertions<T>(Result<T> instance, AssertionChain chain)
