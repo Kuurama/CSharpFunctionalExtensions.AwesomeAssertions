@@ -7,7 +7,7 @@
 
         <IsPackable>true</IsPackable>
         <PackageId>CSharpFunctionalExtensions.AwesomeAssertions</PackageId>
-        <Version>9.3.0</Version>
+        <Version>9.4.0</Version>
         <Authors>Kuurama</Authors>
         <Company>Kuurama</Company>
         <Product>CSharpFunctionalExtensions.AwesomeAssertions</Product>
@@ -24,6 +24,8 @@
         <PackageIcon>icon.png</PackageIcon>
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageReleaseNotes>
+            Version 9.4.0:
+            - Support of AwesomeAssertions 9.4.0
             Version 9.3.0:
             - Support of AwesomeAssertions 9.3.0
             - .NET 10.0 Compatible
@@ -40,17 +42,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath=""/>
-        <None Include="..\icon.png" Pack="true" PackagePath=""/>
+        <None Include="..\README.md" Pack="true" PackagePath="" />
+        <None Include="..\icon.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\CSharpFunctionalExtensions.AwesomeAssertions.Generator\CSharpFunctionalExtensions.AwesomeAssertions.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+        <ProjectReference Include="..\CSharpFunctionalExtensions.AwesomeAssertions.Generator\CSharpFunctionalExtensions.AwesomeAssertions.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="AwesomeAssertions" Version="9.3.0" />
-        <PackageReference Include="CSharpFunctionalExtensions" Version="3.6.0"/>
+        <PackageReference Include="AwesomeAssertions" Version="9.4.0" />
+        <PackageReference Include="CSharpFunctionalExtensions" Version="3.7.0" />
     </ItemGroup>
 
 </Project>
